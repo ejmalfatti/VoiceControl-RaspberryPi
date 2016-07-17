@@ -14,11 +14,11 @@ La idea es que **CMU Sphinx** esté escuchando continuamente y que, mediante Pyt
 
 He visto otros proyectos un poco complicado en su programación, este es más sencillo creo yo, y se acerca más a lo que necesitaba.
 
-####Sistema Operativo
+###Sistema Operativo
 ----
 * Raspbian Jessie
 
-####Depedencia
+###Depedencia
 ----
 
 Paquetes necesario para el funcionamiento:
@@ -33,7 +33,7 @@ Si hay algún error con algunas librerías, es porque no las encuentra. Si ese e
 
 	export LD_LIBRARY_PATH=/usr/local/lib
 
-####Compilación
+###Compilación
 ----
 Para el reconocimiento de voz, necesitamos de compilar primero **sphinxbase-5prealpha** y luego **pocketsphinx-5prealpha**.
 
