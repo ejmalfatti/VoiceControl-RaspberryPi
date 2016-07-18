@@ -18,6 +18,7 @@ He visto otros proyectos un poco complicado en su programación, este es más se
 ----
 Relé Optoacoplado:
 ![](imagenes/rele_optoacoplado.jpg) 
+
 Raspberry Pi 3:
  <img src="imagenes/raspberry-pi3.jpg" alt="Smiley face" height="240" width="320"> 
 
