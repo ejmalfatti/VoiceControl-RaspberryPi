@@ -17,9 +17,9 @@ He visto otros proyectos un poco complicado en su programación, este es más se
 ###Materiales
 ----
 Relé Optoacoplado:
-![](/home/emanuel/Descargas/rele_optoacoplado.jpg) 
+![](imagenes/rele_optoacoplado.jpg) 
 Raspberry Pi 3:
- <img src="/home/emanuel/Descargas/reaspberry-pi3.jpg" alt="Smiley face" height="240" width="320"> 
+ <img src="imagenes/raspberry-pi3.jpg" alt="Smiley face" height="240" width="320"> 
 
 ###Sistema Operativo
 ----
