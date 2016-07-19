@@ -1,14 +1,14 @@
 #Control por voz con una Raspberry Pi3
 
-Me compré una **Raspberry Pi 3** y para darle solo un uso tipo sysadmin, había algo más que podría hacer, tantos proyectos realizados con una simple Raspberry Pi y que mis conocimientos no llegan a cubrir todo eso.
+Me compré una **Raspberry Pi 3** y para darle solo un uso tipo sysadmin, había algo más que podría hacer y que mis conocimientos no llegan a cubrir todo.
 
-Pero decidí hacer una prueba y compré un relé octroacoplado y comencé a jugar con eso. Hasta que surgío, a raíz de algunos videos que vi en Internet, la idea de controlar el encendido por voz de una luz o cualquier otra "cosa" conectada al relé.
+Pero decidí hacer una prueba y compré un relé optoacoplado y comencé a jugar con eso. Hasta que surgío, a raíz de algunos videos que vi en Internet, la idea de controlar el encendido por voz de una luz o cualquier otra "cosa" conectada al relé.
 
-Para ello, lo mejor que ví es utilizar **CMU Sphinx** para la decodificación de la voz, es decir, interpretar lo que capta el microfóno y decodificarlo a texto, ***speech to text***. 
+Para ello, lo mejor que vi es utilizar **[CMU Sphinx](http://cmusphinx.sourceforge.net/) ** para la decodificación de la voz, es decir, interpretar lo que capta el microfóno y decodificarlo a texto, ***speech to text***. 
 
 El leguaje de programación que más conozco es **Python** por ende la programación está hecha en ese idioma.
 
-Utilicé también los modelos acústicos en español del proyecto **VoxForge**. Los diccionarios los armé yo, siguiendo la guia de la comunidad en inglés y algunos diccionarios en español, pude armar los míos.
+Utilicé también los modelos acústicos en español del proyecto **[VoxForge](http://www.voxforge.org/es)**. Los diccionarios los armé yo, siguiendo la guia de la comunidad en inglés y algunos diccionarios en español, pude armar los míos.
 
 La idea es que **CMU Sphinx** esté escuchando continuamente y que, mediante Python, al detectar las palabras "mágicas" ejecute ciertas acciones.
 
@@ -16,21 +16,27 @@ He visto otros proyectos un poco complicado en su programación, este es más se
 
 ###Materiales
 ----
-Relé Optoacoplado:
+**Relé Optoacoplado:**
+
 ![](imagenes/rele_optoacoplado.jpg) 
 
-Raspberry Pi 3:
+**Raspberry Pi 3:**
+
  <img src="imagenes/raspberry-pi3.jpg" alt="Smiley face" height="240" width="320"> 
 
 ###Sistema Operativo
 ----
-* Raspbian Jessie
+* **[Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/)**
+
+También se puede utilizar la versión lite, que no contiene interfáz gráfica.
 
 ###Depedencia
 ----
 
 Paquetes necesario para el funcionamiento:
 
+* build-essential
+* checkinstall
 * python-dev
 * swig
 * bison
@@ -43,6 +49,8 @@ Si hay algún error con algunas librerías, es porque no las encuentra. Si ese e
 
 ###Compilación CMU Sphinx
 ----
+**[Información adicional](https://element2048.wordpress.com/2007/03/09/comando-make-y-configure/)**
+
 Para el reconocimiento de voz, necesitamos de compilar primero **sphinxbase-5prealpha** y luego **pocketsphinx-5prealpha**.
 
 Dentro del direcotrio ***sphinxbase-prealpha***:
@@ -66,6 +74,8 @@ Para armar el diccionario, debemos crear un archivo de texto que contenga cada p
 
 Y ese archivo lo subimos a la siguiente web: **[LM-TOOLS](www.speech.cs.cmu.edu/tools/lmtool-new.html)**
 Generará varios archivos y decargamos el archivo comprimido.
+
+ <img src="imagenes/LM-TOOLS.png" alt="Smiley face" height="610" width="720"> 
 
 **NOTA**: Tener en cuenta que ese sitio es para armar el diccionario, pero en idioma inglés. Yo lo use de base y después lo modifique mirando los diccionarios en español de **VoxForge** e ir probando.
 
