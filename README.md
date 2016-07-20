@@ -4,7 +4,7 @@ Me compré una **Raspberry Pi 3** y para darle solo un uso tipo sysadmin, había
 
 Pero decidí hacer una prueba y compré un relé optoacoplado y comencé a jugar con eso. Hasta que surgío, a raíz de algunos videos que vi en Internet, la idea de controlar el encendido por voz de una luz o cualquier otra "cosa" conectada al relé.
 
-Para ello, lo mejor que vi es utilizar **[CMU Sphinx](http://cmusphinx.sourceforge.net/) ** para la decodificación de la voz, es decir, interpretar lo que capta el microfóno y decodificarlo a texto, ***speech to text***. 
+Para ello, lo mejor que vi es utilizar **[CMU Sphinx](http://cmusphinx.sourceforge.net/)** para la decodificación de la voz, es decir, interpretar lo que capta el microfóno y decodificarlo a texto, ***speech to text***.
 
 El leguaje de programación que más conozco es **Python** por ende la programación está hecha en ese idioma.
 
