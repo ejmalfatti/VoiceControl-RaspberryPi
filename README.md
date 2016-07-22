@@ -1,5 +1,5 @@
-#Control por voz con una Raspberry Pi3
-
+Control por voz con una Raspberry Pi3
+---
 Me compré una **Raspberry Pi 3** y para darle solo un uso tipo sysadmin, había algo más que podría hacer, tantos proyectos realizados con una simple Raspberry Pi y que mis conocimientos no llegan a cubrir todo eso.
 
 Pero decidí hacer una prueba y compré un relé octroacoplado y comencé a jugar con eso. Hasta que surgío, a raíz de algunos videos que vi en Internet, la idea de controlar el encendido por voz de una luz o cualquier otra "cosa" conectada al relé.
@@ -14,20 +14,20 @@ La idea es que **CMU Sphinx** esté escuchando continuamente y que, mediante Pyt
 
 He visto otros proyectos un poco complicado en su programación, este es más sencillo creo yo, y se acerca más a lo que necesitaba.
 
-###Materiales
-----
+Materiales
+---
 Relé Optoacoplado:
 ![](imagenes/rele_optoacoplado.jpg) 
 
 Raspberry Pi 3:
  <img src="imagenes/raspberry-pi3.jpg" alt="Smiley face" height="240" width="320"> 
 
-###Sistema Operativo
-----
+Sistema Operativo
+---
 * Raspbian Jessie
 
-###Depedencia
-----
+Depedencia
+---
 
 Paquetes necesario para el funcionamiento:
 
@@ -41,24 +41,24 @@ Si hay algún error con algunas librerías, es porque no las encuentra. Si ese e
 
 	export LD_LIBRARY_PATH=/usr/local/lib
 
-###Compilación CMU Sphinx
-----
-Para el reconocimiento de voz, necesitamos de compilar primero **sphinxbase-5prealpha** y luego **pocketsphinx-5prealpha**.
+Compilación CMU Sphinx
+---
+Para el reconocimiento de voz, necesitamos de compilar primero   [**sphinxbase-5prealpha**](http://ufpr.dl.sourceforge.net/project/cmusphinx/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz) y luego [**pocketsphinx-5prealpha**](http://ufpr.dl.sourceforge.net/project/cmusphinx/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz).
 
-Dentro del direcotrio ***sphinxbase-prealpha***:
+Dentro del direcotrio ***sphinxbase-5prealpha***:
 
 	./configure --enable-fixed
 	make
 	sudo make install
 
-Dentro del directorio ***pocketsphinx-prealpha***: 
+Dentro del directorio ***pocketsphinx-5prealpha***: 
 
 	./configure
 	make
 	sudo make install
 
-###Armado del diccionario
-----
+Armado del diccionario
+---
 Para armar el diccionario, debemos crear un archivo de texto que contenga cada palabra que queremos utilizar, por ejemplo, el archivo llamado **diccionario.txt**:
 
 	encender luz
@@ -69,13 +69,13 @@ Generará varios archivos y decargamos el archivo comprimido.
 
 **NOTA**: Tener en cuenta que ese sitio es para armar el diccionario, pero en idioma inglés. Yo lo use de base y después lo modifique mirando los diccionarios en español de **VoxForge** e ir probando.
 
-###Prueba de pocketsphinx
-----
+Prueba de pocketsphinx
+---
 Para probar si funciona correctamente, ejecutamos la siguiente instrucciones en un terminal:
 
-	pocketsphinx_continuous -inmic yes -lm 8227.lm -dict 8227.dic > capture.txt -samprate 16000/8000/48000 
+	pocketsphinx_continuous -hmm ../voxforge-es-0.2/model_parameters/voxforge_es_sphinx.cd_ptm_3000/ -lm 5298.lm -dict 5298.dic -jsgf 5298.jsgf > capture.txt -samprate 16000/8000/48000 -inmic yes
 
-Donde **8227.lm** y **8227.dic**, son los diccionarios que generamos en la web LM-TOOLS. Y cada vez que digamos la palabra ***encender luz*** o ***apagar luz*** se irá guardando en un archivo capture.txt.
+Donde **5298.lm** y **5298.dic**, son los diccionarios que generamos en la web LM-TOOLS. La opción **-hmm** son los modelos acusticos de VoxForge.
+Y cada vez que digamos la palabra ***encender luz*** o ***apagar luz*** se irá guardando en un archivo capture.txt.
 
 En el código Python se leerá ese archivo y si contine tal palabra hace tal o cual instrucción.
-
