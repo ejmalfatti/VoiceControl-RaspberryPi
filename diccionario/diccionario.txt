@@ -1,0 +1,4 @@
+encender luz
+apagar luz
+tengo frío
+tengo calor

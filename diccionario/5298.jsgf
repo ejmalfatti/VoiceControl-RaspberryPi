@@ -1,0 +1,8 @@
+#JSGF V1.0;
+grammar commands;
+
+<action> = encender	| apagar | tengo;
+
+<object> = luz | frío | calor;
+
+public <commands> = <action>  <object>;

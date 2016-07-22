@@ -1,0 +1,1 @@
+pocketsphinx_continuous -hmm ../voxforge-es-0.2/model_parameters/voxforge_es_sphinx.cd_ptm_3000/ -lm 5298.lm -dict 5298.dic -jsgf 5298.jsgf > capture.txt -samprate 16000/8000/48000 -inmic yes
