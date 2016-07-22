@@ -14,6 +14,13 @@ La idea es que **CMU Sphinx** esté escuchando continuamente y que, mediante Pyt
 
 He visto otros proyectos un poco complicado en su programación, este es más sencillo creo yo, y se acerca más a lo que necesitaba.
 
+Funcionamiento
+---
+
+Primero hay que ejecutar el archivo **pocketsphinx_continuous.py** y luego hay que ejecutar el segundo archivo llamado **domotica.py**.
+
+Básicamente el primero ejecuta en segundo plano ***pocketsphinx_continuous*** que estará escuchando continuamente y guardando en el archivo ***capture.txt*** las palabras que detecta si se encuentra en el diccionario y el otro archivo estará leyendo continuamnete el archivo ***capture.txt*** y de acuerdo a qué palabra contenga, realizará la acción de encender o apagar el relé.
+
 Materiales
 ---
 Relé Optoacoplado:
