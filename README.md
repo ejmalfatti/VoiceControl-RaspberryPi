@@ -14,7 +14,7 @@ La idea es que **CMU Sphinx** esté escuchando continuamente y que, mediante Pyt
 
 He visto otros proyectos un poco complicado en su programación, este es más sencillo creo yo, y se acerca más a lo que necesitaba.
 
-###Materiales
+Materiales
 ----
 **Relé Optoacoplado:**
 
@@ -24,13 +24,13 @@ He visto otros proyectos un poco complicado en su programación, este es más se
 
  <img src="imagenes/raspberry-pi3.jpg" alt="Smiley face" height="240" width="320"> 
 
-###Sistema Operativo
+Sistema Operativo
 ----
 * **[Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/)**
 
 También se puede utilizar la versión lite, que no contiene interfáz gráfica.
 
-###Depedencia
+Depedencia
 ----
 
 Paquetes necesario para el funcionamiento:
@@ -47,7 +47,7 @@ Si hay algún error con algunas librerías, es porque no las encuentra. Si ese e
 
 	export LD_LIBRARY_PATH=/usr/local/lib
 
-###Compilación CMU Sphinx
+Compilación CMU Sphinx
 ----
 **[Información adicional](https://element2048.wordpress.com/2007/03/09/comando-make-y-configure/)**
 
@@ -65,7 +65,7 @@ Dentro del directorio ***pocketsphinx-prealpha***:
 	make
 	sudo make install
 
-###Armado del diccionario
+Armado del diccionario
 ----
 Para armar el diccionario, debemos crear un archivo de texto que contenga cada palabra que queremos utilizar, por ejemplo, el archivo llamado **diccionario.txt**:
 
@@ -79,7 +79,7 @@ Generará varios archivos y decargamos el archivo comprimido.
 
 **NOTA**: Tener en cuenta que ese sitio es para armar el diccionario, pero en idioma inglés. Yo lo use de base y después lo modifique mirando los diccionarios en español de **VoxForge** e ir probando.
 
-###Prueba de pocketsphinx
+Prueba de pocketsphinx
 ----
 Para probar si funciona correctamente, ejecutamos la siguiente instrucciones en un terminal:
 
@@ -89,3 +89,6 @@ Donde **8227.lm** y **8227.dic**, son los diccionarios que generamos en la web L
 
 En el código Python se leerá ese archivo y si contine tal palabra hace tal o cual instrucción.
 
+Video demostración
+---
+[Video]
