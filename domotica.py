@@ -1,5 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8-*-
+
+###################################################################################
+# Controla encendido y apagado de un rele por voz
+# Autor: Emanuel Malfatti 
+# E-mail: ejmalfatti@outlook.com
+# GitHub: https://ejmalfatti.github.io
+# Licencia: GPLv3
+###################################################################################
+
 import RPi.GPIO as GPIO
 import time
 import os
